@@ -1,0 +1,4 @@
+body { font-family: Arial, sans-serif; background-color: #f4f4f9; padding: 20px; }
+.container { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+h3 { color: #e83e8c; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+.student-card { background: #f8f9fa; padding: 10px; margin-bottom: 10px; border-left: 4px solid #e83e8c; }
