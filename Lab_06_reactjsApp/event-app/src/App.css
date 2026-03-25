@@ -1,0 +1,75 @@
+.event-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.5s ease;
+}
+
+.event-card {
+  background: #2a2a40;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  width: 320px;
+  text-align: center;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.button-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.btn-event {
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  color: #1e1e2f;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Neon Cyan */
+.btn-msg {
+  background-color: #22d3ee;
+  box-shadow: 0 4px 10px rgba(34, 211, 238, 0.2);
+}
+.btn-msg:hover {
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.8);
+  transform: translateY(-3px);
+}
+
+/* Neon Pink */
+.btn-bg {
+  background-color: #f472b6;
+  box-shadow: 0 4px 10px rgba(244, 114, 182, 0.2);
+}
+.btn-bg:hover {
+  box-shadow: 0 0 20px rgba(244, 114, 182, 0.8);
+  transform: translateY(-3px);
+}
+
+/* Neon Yellow */
+.btn-alert {
+  background-color: #fbbf24;
+  box-shadow: 0 4px 10px rgba(251, 191, 36, 0.2);
+}
+.btn-alert:hover {
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.8);
+  transform: translateY(-3px);
+}
+
+.btn-event:active {
+  transform: translateY(1px);
+}
