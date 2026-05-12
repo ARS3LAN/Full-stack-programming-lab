@@ -4,10 +4,10 @@ export default function OrderSummaryPage() {
   return (
     <div className="w-full">
       <div className="text-xs text-blue-600 mb-6 border-b pb-2">
-        Home &gt; User Account &gt; <span className="text-gray-600">Order Summry</span>
+        Home &gt; User Account &gt; <span className="text-gray-600">Order Summary</span>
       </div>
 
-      <h2 className="text-2xl font-bold mb-4 text-slate-800">Order Summery</h2>
+      <h2 className="text-2xl font-bold mb-4 text-slate-800">Order Summary</h2>
 
       <div className="bg-gray-100 p-6 md:p-10 mb-10">
         
@@ -15,7 +15,7 @@ export default function OrderSummaryPage() {
           Thank you. your order has been recieved
         </p>
 
-        <h3 className="font-bold text-lg text-slate-800 mb-4 border-b border-gray-300 pb-2">Yor Order Summry</h3>
+        <h3 className="font-bold text-lg text-slate-800 mb-4 border-b border-gray-300 pb-2">Your Order Summary</h3>
         <div className="text-xs text-slate-800 space-y-2 mb-6">
           <p><span className="text-gray-600 w-20 inline-block">Order # :</span> 0303</p>
           <p><span className="text-gray-600 w-20 inline-block">Date :</span> December 21 2014</p>

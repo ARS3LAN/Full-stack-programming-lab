@@ -45,12 +45,12 @@ export default function CartPage() {
                 [Img]
               </div>
               <div className="flex-1">
-                <a href="#" className="text-blue-500 text-sm font-semibold hover:underline block mb-1">
+                <a href="/product" className="text-blue-500 text-sm font-semibold hover:underline block mb-1">
                   {item.name}
                 </a>
                 <p className="text-[10px] text-gray-600 mb-2 max-w-sm">{item.desc}</p>
                 <div className="text-[10px] text-blue-500 text-right mt-2 md:mt-0">
-                  <a href="#" className="hover:underline">Remove</a> | <a href="#" className="hover:underline">Edit Your Order</a>
+                  <button className="hover:underline">Remove</button> | <button className="hover:underline">Edit Your Order</button>
                 </div>
               </div>
               <div className="flex flex-col items-end gap-2 min-w-[150px]">
@@ -74,12 +74,12 @@ export default function CartPage() {
             <div className="text-lg font-bold text-slate-800">Total: $21.00</div>
           </div>
           <div className="flex gap-4">
-            <button className="bg-white border border-red-600 text-red-600 px-6 py-2 text-xs font-bold uppercase">
+            <a href="/category" className="inline-block bg-white border border-red-600 text-red-600 px-6 py-2 text-xs font-bold uppercase text-center hover:bg-red-50">
               Continue Shopping
-            </button>
-            <button className="bg-red-600 text-white px-6 py-2 text-xs font-bold uppercase">
+            </a>
+            <a href="/checkout" className="inline-block bg-red-600 text-white px-6 py-2 text-xs font-bold uppercase text-center hover:bg-red-700">
               Proceed to checkout
-            </button>
+            </a>
           </div>
         </div>
       </div>

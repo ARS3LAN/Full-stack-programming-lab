@@ -44,7 +44,7 @@ export default function LoginPage() {
             <div className="flex items-center mt-4">
               <div className="w-24 pr-4"></div>
               <label className="flex items-center text-xs text-gray-700 gap-2">
-                <input type="checkbox" /> Remember me th next time i visit
+                <input type="checkbox" /> Remember me the next time i visit
               </label>
             </div>
 

@@ -5,6 +5,7 @@ export default function Navbar() {
         <span>Call for Customer support: <span className="text-red-600">020 38989565</span></span>
         <div className="space-x-4 text-gray-600">
           <a href="/account" className="hover:text-blue-500">My Account</a>
+          <a href="/login">Login</a>
           <a href="#" className="hover:text-blue-500">Wishlist</a>
           <a href="/checkout" className="hover:text-blue-500">To Checkout</a>
         </div>

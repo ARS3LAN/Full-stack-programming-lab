@@ -1,75 +1,115 @@
 import React from 'react';
 
-export default function Home() {
-  const products = Array(8).fill({
-    name: "XS SCYBA X SERUES 119",
-    desc: "The goods of our stores are very reliable and dur we care about the customer",
-    price: "$500.00"
-  });
+export default function MyAccountPage() {
+  const orders = [
+    { id: "#303", date: "December 18, 2014", status: "On hold", total: "$ 699.00" },
+    { id: "#307", date: "December 18, 2014", status: "On hold", total: "$ 799.00" }
+  ];
 
   return (
     <div className="w-full">
-      {/* Secondary Nav underneath Main Nav */}
-      <div className="flex justify-center space-x-8 py-2 text-sm text-gray-600 font-semibold mb-4">
-        <a href="/" className="text-red-600">HOME</a>
-        <a href="/app/category/page.tsx" className="hover:text-blue-500">PRODUCTS</a>
-        <a href="#" className="hover:text-blue-500">SPECIAL OFFERS</a>
-        <a href="/app/contact/page.tsx" className="hover:text-blue-500">CUSTOMER SERVICE</a>
+      {/* Breadcrumb */}
+      <div className="text-xs text-blue-600 mb-6 border-b pb-2">
+        Home &gt; User Account &gt; <span className="text-gray-600">My Account</span>
       </div>
 
-      {/* Hero Section */}
-      <div className="relative bg-slate-300 w-full h-[400px] mb-2 flex items-center p-10">
-        <div className="z-10 max-w-md">
-          <h2 className="text-4xl text-red-600 font-normal leading-tight mb-4">
-            Barrier Reef 158 Jet<br/>
-            TV- Stereo - Home Theater<br/>
-            Supter Spa
-          </h2>
-          <p className="text-black mb-6">
-            Extra Large and Deep 8 Person<br/>
-            158 Jet Supper Spa, TV-Home Theater Spa System.
+      <h2 className="text-2xl font-bold mb-4 text-slate-800">User Profile Details</h2>
+
+      <div className="bg-[#f8f8f8] p-6 md:p-10 mb-10">
+        
+        {/* User Profile Welcome */}
+        <div className="mb-8">
+          <h3 className="font-bold text-lg text-slate-800 mb-4 border-b border-gray-300 pb-2">
+            User profile
+          </h3>
+          <p className="text-xs text-gray-700 leading-relaxed">
+            Hellow User name! From your account you can view your reent orders, manage your shipping and billing addresss.<br/>
+            <a href="/account/edit-profile" className="text-blue-500 hover:underline">edit your password and account details.</a>
           </p>
-          <div className="text-4xl font-bold text-black mb-2">$4899.00</div>
-          <a href="/product" className="inline-block bg-red-600 text-white px-6 py-2 uppercase font-semibold">More Details</a>
         </div>
-      </div>
 
-      {/* Promo Banners */}
-      <div className="grid grid-cols-3 gap-2 mb-10">
-        <div className="bg-[#1C2C42] text-white p-6 h-32 flex flex-col justify-end">
-          <h3 className="text-3xl font-light">5-7 PERSON<br/>SPA</h3>
+        {/* Recent Orders Table */}
+        <div className="mb-10">
+          <h3 className="font-bold text-lg text-slate-800 mb-4">
+            Recent Orders
+          </h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm text-left text-gray-700">
+              <thead className="border-b border-gray-300">
+                <tr>
+                  <th className="py-2 font-normal text-gray-600">Order</th>
+                  <th className="py-2 font-normal text-gray-600">Date</th>
+                  <th className="py-2 font-normal text-gray-600">Status</th>
+                  <th className="py-2 font-normal text-gray-600">Total</th>
+                  <th className="py-2 font-normal text-gray-600 text-right">Options</th>
+                </tr>
+              </thead>
+              <tbody>
+                {orders.map((order, idx) => (
+                  <tr key={idx} className="border-b border-gray-200">
+                    <td className="py-4 text-blue-500">
+                      <a href="/account/order-details" className="hover:underline">{order.id}</a>
+                    </td>
+                    <td className="py-4">{order.date}</td>
+                    <td className="py-4">{order.status}</td>
+                    <td className="py-4">{order.total}</td>
+                    <td className="py-4 text-right">
+                      <a href="/account/order-details" className="inline-block bg-red-600 text-white px-4 py-1.5 text-xs uppercase font-bold hover:bg-red-700 transition">
+                        View Orders
+                      </a>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
-        <div className="bg-[#2B3A4F] text-white p-6 h-32 flex flex-col justify-end">
-          <h3 className="text-2xl font-light">TV THEATER SPA</h3>
-        </div>
-        <div className="bg-red-600 text-white p-6 h-32 flex flex-col justify-center text-center">
-          <h3 className="text-5xl font-bold">SAVE<br/>50%</h3>
-        </div>
-      </div>
 
-      {/* New Products */}
-      <div className="mb-10">
-        <h2 className="text-2xl font-semibold mb-6 border-b pb-2">NEW PRODUCTS</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {products.map((product, idx) => (
-            <div key={idx} className="border p-4 flex flex-col bg-gray-50">
-              <a href="/product" className="h-48 bg-gray-200 mb-4 flex items-center justify-center text-gray-400 hover:opacity-80 transition">
-                [Product Image]
+        {/* My Addresses Section */}
+        <div>
+          <h3 className="font-bold text-lg text-slate-800 mb-2">
+            My Addresses
+          </h3>
+          <p className="text-xs text-gray-700 mb-6">
+            The following addressess will be used on the checkout page by default
+          </p>
+
+          <div className="flex flex-col md:flex-row gap-10">
+            {/* Left Address Column */}
+            <div className="flex-1">
+              <h4 className="font-bold text-slate-800 border-b border-gray-300 pb-2 mb-4">
+                Billing address
+              </h4>
+              <p className="text-xs text-gray-600 leading-relaxed mb-4 h-24">
+                Farrukh Javaid<br/>
+                Hottub Spas<br/>
+                Plot 10 Tech Society<br/>
+                California, CA 20112<br/>
+                United State
+              </p>
+              <a href="/account/edit-billing" className="inline-block bg-red-600 text-white px-6 py-2 text-xs uppercase font-bold hover:bg-red-700 transition">
+                Edit Adresses
               </a>
-              <a href="/product" className="text-sm font-semibold mb-2 hover:text-blue-500 transition">{product.name}</a>
-              <p className="text-xs text-gray-500 mb-2">{product.desc}</p>
-              <div className="text-xl font-bold text-red-600 mb-4">{product.price}</div>
-              
-              <button className="bg-red-600 text-white w-full py-2 mb-2 flex justify-center items-center font-bold text-sm hover:bg-red-700 transition">
-                <span className="mr-2">🛒</span> ADD TO CART
-              </button>
-              
-              <div className="flex justify-between text-xs text-red-600 mt-auto">
-                <button className="hover:underline">ADD TO WISH LIST</button>
-                <a href="/product" className="hover:underline">MORE DETIALS</a>
-              </div>
             </div>
-          ))}
+
+            {/* Right Address Column */}
+            <div className="flex-1">
+              {/* Note: The original image typo has "Billing address" here twice, but I updated this one to Shipping so it makes logical sense for your routing! */}
+              <h4 className="font-bold text-slate-800 border-b border-gray-300 pb-2 mb-4">
+                Shipping address
+              </h4>
+              <p className="text-xs text-gray-600 leading-relaxed mb-4 h-24">
+                Farrukh Javaid<br/>
+                Hottub Spas<br/>
+                Plot 10 Tech Society<br/>
+                California, CA 20112<br/>
+                United State
+              </p>
+              <a href="/account/edit-shipping" className="inline-block bg-red-600 text-white px-6 py-2 text-xs uppercase font-bold hover:bg-red-700 transition">
+                Edit Adresses
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
